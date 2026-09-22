@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="电影在线播放 - 提供最新热门电影、经典老片、高清无删减的免费在线观看服务。支持多倍速播放、高清画质选择，涵盖动作、爱情、科幻、悬疑等多种类型。">
+    <meta name="keywords" content="电影在线播放,在线看电影,免费电影,高清电影,最新电影,电影资源">
+    <title>电影在线播放 - 热门高清影视资源与在线观看指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e50914;
+            --primary-hover: #b20710;
+            --bg-dark: #141414;
+            --bg-card: #1f1f1f;
+            --text-main: #ffffff;
+            --text-secondary: #b3b3b3;
+            --border-color: #333;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(20, 20, 20, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        nav a {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+        }
+
+        .search-box {
+            display: flex;
+            background: #333;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            padding: 8px 12px;
+            color: var(--text-main);
+            outline: none;
+            width: 200px;
+        }
+
+        .search-box button {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 0 12px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(to top, var(--bg-dark), transparent 60%),
+                        url('https://picsum.photos/seed/cinema/1920/1080') no-repeat center center/cover;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 60px;
+        }
+
+        .hero-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            width: 100%;
+        }
+
+        .hero-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 2px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: var(--spacing-md);
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: var(--spacing-md);
+            align-items: center;
+        }
+
+        .hero-meta span::before {
+            content: '•';
+            margin-right: 8px;
+            color: var(--primary-color);
+        }
+
+        .hero-meta span:first-child::before {
+            content: '';
+        }
+
+        .hero-desc {
+            max-width: 600px;
+            color: #ddd;
+            margin-bottom: var(--spacing-lg);
+            font-size: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            margin-left: var(--spacing-sm);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: var(--spacing-lg) var(--spacing-md);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--text-main);
+        }
+
+        .section-more {
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        /* Movie Grid */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 24px;
+        }
+
+        .movie-card {
+            background-color: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+        }
+
+        .poster-wrapper {
+            position: relative;
+            padding-top: 150%; /* 2:3 Aspect Ratio */
+            background-color: #000;
+        }
+
+        .poster-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+            opacity: 0;
+            transition: opacity 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .movie-card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .play-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+        }
+
+        .card-info {
+            padding: 12px;
+        }
+
+        .movie-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .movie-meta {
+            font-size: 12px;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .quality-tag {
+            background-color: #333;
+            color: #ddd;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-size: 10px;
+        }
+
+        /* Feature List (Why Us) */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            padding: var(--spacing-lg);
+            background-color: #1a1a1a;
+            border-radius: 8px;
+        }
+
+        .feature-item {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary-color);
+        }
+
+        .feature-title {
+            font-weight: bold;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .feature-text {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #1a1a1a;
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+            border-radius: 8px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: var(--spacing-md) 0;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .faq-answer {
+            margin-top: var(--spacing-sm);
+            color: var(--text-secondary);
+            font-size: 14px;
+            display: none; /* JS will toggle */
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            padding: var(--spacing-lg) var(--spacing-md);
+            border-top: 1px solid var(--border-color);
+            margin-top: var(--spacing-lg);
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-lg);
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: var(--spacing-md);
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            margin-top: var(--spacing-lg);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid #222;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+            
+            nav ul {
+                gap: var(--spacing-md);
+                font-size: 13px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .movie-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .poster-wrapper {
+                padding-top: 140%;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .search-box input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="logo">Cine<span>View</span></div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">最新上映</a></li>
+                <li><a href="#">高清电影</a></li>
+                <li><a href="#">经典老片</a></li>
+                <li><a href="#">电视剧</a></li>
+            </ul>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="搜索电影名称...">
+            <button>🔍</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">今日推荐</span>
+            <h1 class="hero-title">星际穿越：深空奇遇</h1>
+            <div class="hero-meta">
+                <span>2024</span>
+                <span>科幻 / 冒险 / 灵魂</span>
+                <span>2小时 15分钟</span>
+                <span>IMDb 9.2</span>
+            </div>
+            <p class="hero-desc">在未来的地球，资源枯竭，人类面临灭绝的危机。一队探险家利用虫洞进行星际航行，试图寻找适合人类居住的新家园。这是一场关于爱、时间与生存的宏大史诗。</p>
+            <div>
+                <button class="btn btn-primary" onclick="alert('正在跳转至播放器...')">立即播放</button>
+                <button class="btn btn-secondary">加入片单</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Features -->
+        <section class="features">
+            <div class="feature-item">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">极速加载</h3>
+                <p class="feature-text">采用先进的流媒体技术，确保高清画质下的流畅播放体验，无需等待。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💎</div>
+                <h3 class="feature-title">超清画质</h3>
+                <p class="feature-text">支持 1080P、4K 超高清分辨率，还原电影每一帧的视觉细节。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🛡️</div>
+                <h3 class="feature-title">安全无广</h3>
+                <p class="feature-text">纯净播放环境，无弹窗广告干扰，保护您的设备安全与隐私。</p>
+            </div>
+        </section>
+
+        <!-- Latest Movies -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">最新上映</h2>
+                <a href="#" class="section-more">查看更多 &rarr;</a>
+            </div>
+            <div class="movie-grid">
+                <!-- Movie Item 1 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie1/300/450" alt="电影海报">
+                        <div class="card-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="movie-title">赛博侦探</h3>
+                        <div class="movie-meta">
+                            <span>2024</span>
+                            <span class="quality-tag">4K</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie Item 2 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie2/300/450" alt="电影海报">
+                        <div class="card-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="movie-title">深海迷航</h3>
+                        <div class="movie-meta">
+                            <span>2024</span>
+                            <span class="quality-tag">HD</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie Item 3 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie3/300/450" alt="电影海报">
+                        <div class="card-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="movie-title">午夜列车</h3>
+                        <div class="movie-meta">
+                            <span>2023</span>
+                            <span class="quality-tag">HD</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie Item 4 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie4/300/450" alt="电影海报">
+                        <div class="card-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="movie-title">最后的武士</h3>
+                        <div class="movie-meta">
+                            <span>2003</span>
+                            <span class="quality-tag">4K</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie Item 5 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie5/300/450" alt="电影海报">
+                        <div class="card-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="movie-title">云端之城</h3>
+                        <div class="movie-meta">
+                            <span>2024</span>
+                            <span class="quality-tag">1080P</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie Item 6 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie6/300/450" alt="电影海报">
+                        <div class="card-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="movie-title">极速追击</h3>
+                        <div class="movie-meta">
+                            <span>2024</span>
+                            <span class="quality-tag">HD</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="section-header" style="margin-bottom: 24px;">
+                <h2 class="section-title">常见问题</h2>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">如何开始观看电影？ <span>+</span></div>
+                <div class="faq-answer">
+                    您只需在首页找到感兴趣的电影海报，点击“立即播放”按钮，或点击海报上的播放图标，即可直接进入播放器页面开始观看。
+                </div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">支持哪些设备观看？ <span>+</span></div>
+                <div class="faq-answer">
+                    本站支持 PC 端浏览器、手机端浏览器以及平板电脑观看。大部分现代移动设备均可流畅播放高清内容。
+                </div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">播放时出现卡顿怎么办？ <span>+</span></div>
+                <div class="faq-answer">
+                    如果遇到卡顿，请尝试切换清晰度（如从 4K 切换至 1080P），或者检查您的网络连接。我们建议使用稳定的 Wi-Fi 环境以获得最佳体验。
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <div class="logo" style="margin-bottom: 16px;">Cine<span>View</span></div>
+            <p style="color: #666; font-size: 13px; line-height: 1.8;">
+                CineView 致力于为用户提供最便捷、最优质的电影在线播放服务。我们汇集全球最新电影资源，让您随时随地享受视听盛宴。
+            </p>
+        </div>
+        <div class="footer-col">
+            <h4>快速链接</h4>
+            <ul>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">免责声明</a></li>
+                <li><a href="#">隐私政策</a></li>
+                <li><a href="#">联系合作</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>热门分类</h4>
+            <ul>
+                <li><a href="#">动作片</a></li>
+                <li><a href="#">爱情片</a></li>
+                <li><a href="#">科幻片</a></li>
+                <li><a href="#">恐怖片</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>服务支持</h4>
+            <ul>
+                <li><a href="#">帮助中心</a></li>
+                <li><a href="#">意见反馈</a></li>
+                <li><a href="#">用户协议</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2024 CineView. All Rights Reserved. 本站内容仅供学习交流，请勿用于商业用途。
+    </div>
+</footer>
+
+<script>
+    function toggleFaq(element) {
+        // Close other items
+        const allItems = document.querySelectorAll('.faq-item');
+        allItems.forEach(item => {
+            if (item !== element) {
+                item.classList.remove('active');
+                item.querySelector('.faq-question span').textContent = '+';
+            }
+        });
+
+        // Toggle current item
+        element.classList.toggle('active');
+        const span = element.querySelector('.faq-question span');
+        span.textContent = element.classList.contains('active') ? '-' : '+';
+    }
+</script>
+
+</body>
+  </html>

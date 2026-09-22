@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩国综艺大全 - 收集最新最热门的韩国综艺节目推荐，包括Running Man、无限挑战、新西游记等经典与热播综艺，提供高清视频资源与观看指南。">
+    <meta name="keywords" content="好看的韩国综艺,韩国综艺推荐,韩综排行榜,Running Man,无限挑战,新西游记">
+    <title>好看的韩国综艺-韩国综艺推荐与热播综艺大全</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1d3557;
+            --accent-color: #f1faee;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+            --radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md) var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .search-box input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .search-box button {
+            padding: 8px 16px;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #457b9d 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto var(--spacing-lg);
+            opacity: 0.9;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-lg) var(--spacing-md);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 2px solid #eee;
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .view-all {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Grid Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-content {
+            padding: var(--spacing-md);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-category {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: var(--spacing-md);
+            flex-grow: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            border-top: 1px solid #f0f0f0;
+            padding-top: var(--spacing-sm);
+        }
+
+        .rating {
+            color: #f1c40f;
+            font-weight: bold;
+        }
+
+        /* Featured Section */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .featured-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+            display: flex;
+        }
+
+        .featured-img {
+            width: 50%;
+            object-fit: cover;
+        }
+
+        .featured-info {
+            padding: var(--spacing-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-info h2 {
+            font-size: 1.6rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--secondary-color);
+        }
+
+        .featured-info .tags {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .featured-info p {
+            color: var(--text-light);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            width: fit-content;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* List Style Section */
+        .list-section {
+            background: var(--bg-card);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .ranking-list {
+            counter-reset: rank;
+        }
+
+        .ranking-item {
+            display: flex;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .ranking-item:last-child {
+            border-bottom: none;
+        }
+
+        .ranking-number {
+            width: 30px;
+            height: 30px;
+            background-color: #eee;
+            color: #666;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .ranking-item:nth-child(1) .ranking-number {
+            background-color: #ffd700;
+            color: #fff;
+        }
+
+        .ranking-item:nth-child(2) .ranking-number {
+            background-color: #c0c0c0;
+            color: #fff;
+        }
+
+        .ranking-item:nth-child(3) .ranking-number {
+            background-color: #cd7f32;
+            color: #fff;
+        }
+
+        .ranking-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .ranking-content p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Guide Section */
+        .guide-section {
+            margin-top: var(--spacing-lg);
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .guide-item {
+            background: #fff;
+            padding: var(--spacing-md);
+            border-radius: var(--radius);
+            border: 1px solid #eee;
+            text-align: center;
+        }
+
+        .guide-icon {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-sm);
+            display: block;
+        }
+
+        .guide-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .guide-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 40px 20px;
+            margin-top: var(--spacing-lg);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .footer-col h4 {
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: var(--spacing-lg);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+
+            .nav-links {
+                gap: var(--spacing-md);
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-img {
+                width: 100%;
+                height: 200px;
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span>★</span> 韩综网
+            </a>
+            <nav class="nav-links">
+                <a href="#">首页</a>
+                <a href="#">热门排行</a>
+                <a href="#">最新更新</a>
+                <a href="#">分类</a>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索综艺...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>探索精彩无限的韩国综艺世界</h1>
+        <p>汇集Running Man、无限挑战、新西游记等经典与热播综艺，为您提供最全面的韩综推荐与观看指南。</p>
+        <div class="hero-tags">
+            <span class="tag">搞笑综艺</span>
+            <span class="tag">慢综艺</span>
+            <span class="tag">生存竞技</span>
+            <span class="tag">旅行美食</span>
+            <span class="tag">音乐竞演</span>
+        </div>
+    </section>
+
+    <main>
+        <!-- Featured Highlight -->
+        <section class="featured-grid">
+            <article class="featured-card">
+                <img src="https://picsum.photos/seed/runningman/800/600" alt="Running Man海报" class="featured-img">
+                <div class="featured-info">
+                    <span class="card-category">经典必看</span>
+                    <h2>Running Man</h2>
+                    <div class="tags">
+                        <span style="font-size:0.8rem; background:#eee; padding:2px 6px; border-radius:4px;">搞笑</span>
+                        <span style="font-size:0.8rem; background:#eee; padding:2px 6px; border-radius:4px;">竞技</span>
+                        <span style="font-size:0.8rem; background:#eee; padding:2px 6px; border-radius:4px;">团队</span>
+                    </div>
+                    <p>《Running Man》作为韩国SBS电视台的王牌综艺节目，以其独特的“奔跑”概念和成员间的默契配合，创造了无数经典瞬间，是韩综迷不可错过的开山之作。</p>
+                    <a href="#" class="btn">查看详情</a>
+                </div>
+            </article>
+            <article class="featured-card">
+                <img src="https://picsum.photos/seed/quizshow/400/600" alt="无限挑战海报" class="featured-img">
+                <div class="featured-info">
+                    <span class="card-category">国民综艺</span>
+                    <h2>无限挑战</h2>
+                    <div class="tags">
+                        <span style="font-size:0.8rem; background:#eee; padding:2px 6px; border-radius:4px;">户外</span>
+                        <span style="font-size:0.8rem; background:#eee; padding:2px 6px; border-radius:4px;">挑战</span>
+                    </div>
+                    <p>被粉丝亲切称为“无限男班”，这档节目融合了音乐、综艺、旅游和挑战元素，虽然已完结，但其“六位艺人”的羁绊至今仍被深深怀念。</p>
+                    <a href="#" class="btn">查看详情</a>
+                </div>
+            </article>
+        </section>
+
+        <!-- Hot Categories -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">热门分类</h2>
+                <a href="#" class="view-all">浏览全部 ></a>
+            </div>
+            <div class="grid-container">
+                <div class="card">
+                    <img src="https://picsum.photos/seed/music/400/300" alt="音乐竞演综艺" class="card-image">
+                    <div class="card-content">
+                        <span class="card-category">音乐竞演</span>
+                        <h3 class="card-title">我独自生活</h3>
+                        <p class="card-desc">聚焦单身人士的真实生活，展现都市人群的孤独与治愈，慢综艺的代表作。</p>
+                        <div class="card-meta">
+                            <span class="rating">★ 9.8</span>
+                            <span>2023年</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://picsum.photos/seed/adventure/400/300" alt="户外生存综艺" class="card-image">
+                    <div class="card-content">
+                        <span class="card-category">户外生存</span>
+                        <h3 class="card-title">新西游记</h3>
+                        <p class="card-desc">以西游记为背景的搞笑生存游戏，成员们在山中探险，笑料百出。</p>
+                        <div class="card-meta">
+                            <span class="rating">★ 9.5</span>
+                            <span>2023年</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://picsum.photos/seed/food/400/300" alt="美食综艺" class="card-image">
+                    <div class="card-content">
+                        <span class="card-category">美食</span>
+                        <h3 class="card-title">尹食堂</h3>
+                        <p class="card-desc">由尹汝贞、李瑞镇和郑海利经营的小餐馆，温暖治愈的美食治愈系综艺。</p>
+                        <div class="card-meta">
+                            <span class="rating">★ 9.6</span>
+                            <span>2017年</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://picsum.photos/seed/escape/400/300" alt="密室逃脱综艺" class="card-image">
+                    <div class="card-content">
+                        <span class="card-category">推理逃脱</span>
+                        <h3 class="card-title">认识的哥哥</h3>
+                        <p class="card-desc">通过嘉宾的亲身经历或故事，让嘉宾在游戏中解开谜题，揭露真相。</p>
+                        <div class="card-meta">
+                            <span class="rating">★ 9.4</span>
+                            <span>2023年</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Rankings -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">韩综排行榜</h2>
+                <a href="#" class="view-all">查看完整榜单 ></a>
+            </div>
+            <div class="list-section">
+                <div class="ranking-list">
+                    <div class="ranking-item">
+                        <div class="ranking-number">1</div>
+                        <div class="ranking-content">
+                            <h3>Running Man</h3>
+                            <p>韩国综艺的黄金标准，持续播出多年依然保持高热度。</p>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <div class="ranking-number">2</div>
+                        <div class="ranking-content">
+                            <h3>新西游记</h3>
+                            <p>搞笑指数爆表的生存游戏，成员间的化学反应极佳。</p>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <div class="ranking-number">3</div>
+                        <div class="ranking-content">
+                            <h3>无限挑战</h3>
+                            <p>国民综艺，户外挑战与音乐元素的完美结合。</p>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <div class="ranking-number">4</div>
+                        <div class="ranking-content">
+                            <h3>我独自生活</h3>
+                            <p>真实记录单身独居生活，引发大量都市人共鸣。</p>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <div class="ranking-number">5</div>
+                        <div class="ranking-content">
+                            <h3>认识的哥哥</h3>
+                            <p>推理与综艺结合，揭露嘉宾不为人知的故事。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Guide Section -->
+        <section class="guide-section">
+            <div class="section-header">
+                <h2 class="section-title">韩综观看指南</h2>
+            </div>
+            <div class="guide-grid">
+                <div class="guide-item">
+                    <span class="guide-icon">📺</span>
+                    <h3>推荐平台</h3>
+                    <p>爱奇艺、腾讯视频、优酷等国内主流平台均有正版引进韩综资源。</p>
+                </div>
+                <div class="guide-item">
+                    <span class="guide-icon">🎧</span>
+                    <h3>字幕选择</h3>
+                    <p>建议选择“官方字幕”或“专业字幕组”版本，以保证翻译准确度和笑点传达。</p>
+                </div>
+                <div class="guide-item">
+                    <span class="guide-icon">⭐</span>
+                    <h3>观看顺序</h3>
+                    <p>部分综艺（如Running Man）集数较多，建议从最新一季或经典常驻成员时期开始观看。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于韩综网</h4>
+                <p style="color: #ccc; font-size: 0.9rem;">韩综网致力于为中文观众提供最全面、最及时的韩国综艺节目资讯与推荐，是您追综路上的好伙伴。</p>
+            </div>
+            <div class="footer-col">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">搞笑综艺</a></li>
+                    <li><a href="#">慢综艺</a></li>
+                    <li><a href="#">音乐竞演</a></li>
+                    <li><a href="#">生存游戏</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">观看指南</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 韩综网 版权所有. 本站内容仅供学习交流使用.
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="3dm汉化官网提供最新3DM汉化组发布的PC单机游戏汉化补丁、免安装中文版下载。涵盖热门游戏如黑神话：悟空、赛博朋克2077等，提供安全稳定的汉化资源与技术支持。">
+    <meta name="keywords" content="3dm汉化,3DM汉化组,游戏汉化,3DM游戏下载,黑神话汉化,赛博朋克汉化">
+    <title>3dm汉化-3DM汉化组官方资源与游戏汉化补丁下载中心</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #00bcd4;
+            --primary-hover: #00acc1;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --border-color: #333;
+            --accent-red: #ff5252;
+            --spacing-unit: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-between {
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        /* Header */
+        header {
+            background-color: #1a1a1a;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 12px 0;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: #2c2c2c;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            padding: 8px 12px;
+            color: var(--text-main);
+            outline: none;
+            width: 200px;
+        }
+
+        .search-box button {
+            background: var(--primary-color);
+            border: none;
+            padding: 0 12px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 40px 0;
+            background: linear-gradient(180deg, #1e1e1e 0%, var(--bg-color) 100%);
+        }
+
+        .hero-title {
+            font-size: 28px;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+
+        .hero-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .hero-card img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-card-content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+        }
+
+        .hero-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .hero-card .tags span {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #000;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 2px;
+            margin-right: 4px;
+        }
+
+        .side-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .side-item {
+            background: var(--card-bg);
+            padding: 12px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.2s;
+        }
+
+        .side-item:hover {
+            transform: translateX(4px);
+            border-left: 2px solid var(--primary-color);
+        }
+
+        .side-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .side-item-info h4 {
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .side-item-info p {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 40px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .view-all {
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .view-all:hover {
+            color: var(--primary-color);
+        }
+
+        /* Game Grid */
+        .game-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .game-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            border-color: #333;
+        }
+
+        .game-cover {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .game-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            backdrop-filter: blur(4px);
+        }
+
+        .status-badge.new {
+            background: var(--primary-color);
+            color: #000;
+        }
+
+        .game-info {
+            padding: 16px;
+        }
+
+        .game-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .game-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .btn-download {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            background: var(--primary-color);
+            color: #000;
+            text-align: center;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 13px;
+            transition: background 0.2s;
+        }
+
+        .btn-download:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-download.secondary {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-download.secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Category Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-box {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-list li {
+            margin-bottom: 8px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .category-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .category-list span {
+            background: #333;
+            padding: 0 4px;
+            border-radius: 2px;
+            font-size: 11px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0d0d0d;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0 20px;
+            margin-top: 40px;
+            color: var(--text-secondary);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 16px;
+                font-size: 13px;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .search-box input {
+                width: 100%;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .hero-card {
+                min-height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                display: none; /* Simplified mobile nav for demo */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                <span>3DM汉化</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">最新汉化</a></li>
+                    <li><a href="#">热门游戏</a></li>
+                    <li><a href="#">免安装版</a></li>
+                    <li><a href="#">游戏补丁</a></li>
+                    <li><a href="#">工具下载</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索游戏或汉化补丁...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">3DM汉化组官方资源中心</h1>
+                <div class="hero-grid">
+                    <div class="hero-card">
+                        <img src="https://picsum.photos/seed/cyberpunk/800/400" alt="热门汉化推荐">
+                        <div class="hero-card-content">
+                            <h3>赛博朋克 2077 - 完整版汉化</h3>
+                            <p style="color: #ccc; font-size: 13px; margin-bottom: 8px;">3DM汉化组倾力打造，支持1.6版本，修复大量BUG，还原原汁原味剧情体验。</p>
+                            <div class="tags">
+                                <span>RPG</span>
+                                <span>科幻</span>
+                                <span>1.6</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="side-list">
+                        <div class="side-item">
+                            <img src="https://picsum.photos/seed/wukong/100/100" alt="黑神话：悟空">
+                            <div class="side-item-info">
+                                <h4>黑神话：悟空 官方正版</h4>
+                                <p>无需汉化，官方原生中文支持</p>
+                            </div>
+                        </div>
+                        <div class="side-item">
+                            <img src="https://picsum.photos/seed/stardew/100/100" alt="星露谷物语">
+                            <div class="side-item-info">
+                                <h4>星露谷物语 1.5.6 汉化</h4>
+                                <p>包含中文版及所有Mod支持</p>
+                            </div>
+                        </div>
+                        <div class="side-item">
+                            <img src="https://picsum.photos/seed/cod/100/100" alt="使命召唤">
+                            <div class="side-item-info">
+                                <h4>使命召唤：现代战争 III</h4>
+                                <p>多语言补丁及联机汉化</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <section class="container">
+            <div class="flex flex-between" style="margin-bottom: 20px;">
+                <h2 class="section-title">最新汉化发布</h2>
+                <a href="#" class="view-all">查看全部 &gt;</a>
+            </div>
+            
+            <div class="grid-4">
+                <!-- Game Card 1 -->
+                <article class="game-card">
+                    <div class="game-cover">
+                        <img src="https://picsum.photos/seed/baldur/300/200" alt="博德之门3">
+                        <span class="status-badge new">NEW</span>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">博德之门3 (Baldur's Gate 3)</h3>
+                        <div class="game-meta">
+                            <span>版本: 1.3.0</span>
+                            <span>大小: 120GB</span>
+                        </div>
+                        <a href="#" class="btn-download">立即下载</a>
+                    </div>
+                </article>
+
+                <!-- Game Card 2 -->
+                <article class="game-card">
+                    <div class="game-cover">
+                        <img src="https://picsum.photos/seed/fifa/300/200" alt="FIFA 24">
+                        <span class="status-badge">HD</span>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">FIFA 24 EA FC 24</h3>
+                        <div class="game-meta">
+                            <span>版本: 1.06</span>
+                            <span>大小: 50GB</span>
+                        </div>
+                        <a href="#" class="btn-download">立即下载</a>
+                    </div>
+                </article>
+
+                <!-- Game Card 3 -->
+                <article class="game-card">
+                    <div class="game-cover">
+                        <img src="https://picsum.photos/seed/gta/300/200" alt="GTA V">
+                        <span class="status-badge">MOD</span>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">GTA 5 完整版 (含侠盗猎车手在线)</h3>
+                        <div class="game-meta">
+                            <span>版本: 2.3</span>
+                            <span>大小: 90GB</span>
+                        </div>
+                        <a href="#" class="btn-download">立即下载</a>
+                    </div>
+                </article>
+
+                <!-- Game Card 4 -->
+                <article class="game-card">
+                    <div class="game-cover">
+                        <img src="https://picsum.photos/seed/hogwarts/300/200" alt="霍格沃茨之遗">
+                        <span class="status-badge">VER 1.04</span>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">霍格沃茨之遗</h3>
+                        <div class="game-meta">
+                            <span>版本: 1.04</span>
+                            <span>大小: 60GB</span>
+                        </div>
+                        <a href="#" class="btn-download">立即下载</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="flex flex-between" style="margin-bottom: 20px;">
+                <h2 class="section-title">热门游戏分类</h2>
+            </div>
+            <div class="grid-4">
+                <article class="game-card">
+                    <div class="game-cover">
+                        <img src="https://picsum.photos/seed/rpg/300/200" alt="RPG">
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">角色扮演 (RPG)</h3>
+                        <p style="font-size: 12px; color: var(--text-secondary); margin-top: 8px;">包含巫师、最终幻想、博德之门等大型RPG汉化。</p>
+                    </div>
+                </article>
+                <article class="game-card">
+                    <div class="game-cover">
+                        <img src="https://picsum.photos/seed/action/300/200" alt="动作射击">
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">动作射击</h3>
+                        <p style="font-size: 12px; color: var(--text-secondary); margin-top: 8px;">使命召唤、战地、COD等硬核射击游戏资源。</p>
+                    </div>
+                </article>
+                <article class="game-card">
+                    <div class="game-cover">
+                        <img src="https://picsum.photos/seed/strategy/300/200" alt="策略模拟">
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">策略模拟</h3>
+                        <p style="font-size: 12px; color: var(--text-secondary); margin-top: 8px;">文明、钢铁雄心、欧陆风云等历史模拟游戏。</p>
+                    </div>
+                </article>
+                <article class="game-card">
+                    <div class="game-cover">
+                        <img src="https://picsum.photos/seed/sports/300/200" alt="体育竞技">
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">体育竞技</h3>
+                        <p style="font-size: 12px; color: var(--text-secondary); margin-top: 8px;">NBA 2K、FIFA、实况足球等体育游戏汉化。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sidebar Layout Section -->
+        <section class="container">
+            <div class="flex" style="gap: 24px; flex-wrap: wrap;">
+                <div style="flex: 3; min-width: 300px;">
+                    <div class="section-header">
+                        <h2 class="section-title">近期更新日志</h2>
+                    </div>
+                    <div style="background: var(--card-bg); border-radius: 8px; overflow: hidden;">
+                        <ul style="border-left: 1px solid var(--border-color);">
+                            <li style="padding: 16px; border-bottom: 1px solid #252525; display: flex; gap: 12px;">
+                                <span style="color: var(--primary-color); font-size: 12px; min-width: 100px;">2023-10-24</span>
+                                <div>
+                                    <h4 style="font-size: 15px; margin-bottom: 4px;"><a href="#">《星空》 1.10 汉化补丁发布</a></h4>
+                                    <p style="font-size: 13px; color: var(--text-secondary);">修复了部分过场动画乱码问题，优化了UI显示。</p>
+                                </div>
+                            </li>
+                            <li style="padding: 16px; border-bottom: 1px solid #252525; display: flex; gap: 12px;">
+                                <span style="color: var(--primary-color); font-size: 12px; min-width: 100px;">2023-10-22</span>
+                                <div>
+                                    <h4 style="font-size: 15px; margin-bottom: 4px;"><a href="#">《漫威蜘蛛侠2》 完整版汉化</a></h4>
+                                    <p style="font-size: 13px; color: var(--text-secondary);">支持PS5移植版，包含所有DLC内容。</p>
+                                </div>
+                            </li>
+                            <li style="padding: 16px; border-bottom: 1px solid #252525; display: flex; gap: 12px;">
+                                <span style="color: var(--primary-color); font-size: 12px; min-width: 100px;">2023-10-18</span>
+                                <div>
+                                    <h4 style="font-size: 15px; margin-bottom: 4px;"><a href="#">《寂静岭2：重制版》中文演示</a></h4>
+                                    <p style="font-size: 13px; color: var(--text-secondary);">官方确认将支持中文，敬请期待。</p>
+                                </div>
+                            </li>
+                            <li style="padding: 16px; display: flex; gap: 12px;">
+                                <span style="color: var(--primary-color); font-size: 12px; min-width: 100px;">2023-10-15</span>
+                                <div>
+                                    <h4 style="font-size: 15px; margin-bottom: 4px;"><a href="#">《荒野大镖客2》 1.06 汉化</a></h4>
+                                    <p style="font-size: 13px; color: var(--text-secondary);">最新版本修正了NPC对话显示错误。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <aside style="flex: 1; min-width: 250px;">
+                    <div class="sidebar-box">
+                        <h3 class="sidebar-title">热门标签</h3>
+                        <div class="tags">
+                            <a href="#" style="display: inline-block; background: #333; padding: 4px 8px; border-radius: 4px; font-size: 12px; margin: 0 4px 4px 0;">3DM汉化</a>
+                            <a href="#" style="display: inline-block; background: #333; padding: 4px 8px; border-radius: 4px; font-size: 12px; margin: 0 4px 4px 0;">游戏下载</a>
+                            <a href="#" style="display: inline-block; background: #333; padding: 4px 8px; border-radius: 4px; font-size: 12px; margin: 0 4px 4px 0;">单机游戏</a>
+                            <a href="#" style="display: inline-block; background: #333; padding: 4px 8px; border-radius: 4px; font-size: 12px; margin: 0 4px 4px 0;">汉化补丁</a>
+                            <a href="#" style="display: inline-block; background: #333; padding: 4px 8px; border-radius: 4px; font-size: 12px; margin: 0 4px 4px 0;">免安装版</a>
+                            <a href="#" style="display: inline-block; background: #333; padding: 4px 8px; border-radius: 4px; font-size: 12px; margin: 0 4px 4px 0;">MOD</a>
+                            <a href="#" style="display: inline-block; background: #333; padding: 4px 8px; border-radius: 4px; font-size: 12px; margin: 0 4px 4px 0;">GTA5</a>
+                            <a href="#" style="display: inline-block; background: #333; padding: 4px 8px; border-radius: 4px; font-size: 12px; margin: 0 4px 4px 0;">巫师3</a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-box" style="margin-top: 20px;">
+                        <h3 class="sidebar-title">常用工具</h3>
+                        <ul class="category-list">
+                            <li><a href="#">3DM启动器 <span>v1.2</span></a></li>
+                            <li><a href="#">游戏破解补丁合集 <span>最新</span></a></li>
+                            <li><a href="#">显卡驱动检测工具 <span>必备</span></a></li>
+                            <li><a href="#">游戏资源管理器 <span>Pro</span></a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="container" style="max-width: 800px;">
+            <div class="section-header">
+                <h2 class="section-title">常见问题 (FAQ)</h2>
+            </div>
+            <div style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+                <details style="padding: 16px 0; cursor: pointer;">
+                    <summary style="font-weight: bold; color: var(--text-main); outline: none;">下载的游戏需要联网吗？</summary>
+                    <p style="margin-top: 10px; color: var(--text-secondary); padding-left: 16px;">大部分3DM汉化发布的免安装版游戏（ISO镜像）在安装后首次运行时需要联网验证一次，之后即可断网畅玩。部分在线游戏（如GTA Online）仍需联网。</p>
+                </details>
+                <details style="padding: 16px 0; cursor: pointer;">
+                    <summary style="font-weight: bold; color: var(--text-main); outline: none;">如何安装汉化补丁？</summary>
+                    <p style="margin-top: 10px; color: var(--text-secondary); padding-left: 16px;">下载汉化压缩包后，请先备份原游戏文件夹。将压缩包内的所有文件解压到游戏根目录，并覆盖原文件。部分汉化需要运行根目录下的安装程序（.exe）。</p>
+                </details>
+                <details style="padding: 16px 0; cursor: pointer;">
+                    <summary style="font-weight: bold; color: var(--text-main); outline: none;">游戏启动闪退怎么办？</summary>
+                    <p style="margin-top: 10px; color: var(--text-secondary); padding-left: 16px;">请检查是否安装了必要的运行库（如DirectX、Visual C++）。同时确保显卡驱动是最新版本。如果是汉化导致的问题，请尝试回退到官方原版语言或寻找更新版本的汉化补丁。</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 16px; display: inline-block;">
+                        <span>3DM汉化</span>
+                    </a>
+                    <p style="font-size: 13px; line-height: 1.8;">
+                        3DM汉化组致力于为全球玩家提供高质量、安全、稳定的单机游戏汉化服务。我们专注于PC平台，还原游戏原汁原味的剧情体验。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>资源分类</h4>
+                    <ul>
+                        <li><a href="#">最新汉化</a></li>
+                        <li><a href="#">热门游戏</a></li>
+                        <li><a href="#">单机下载</a></li>
+                        <li><a href="#">游戏补丁</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>游戏库</h4>
+                    <ul>
+                        <li><a href="#">RPG角色扮演</a></li>
+                        <li><a href="#">FPS射击游戏</a></li>
+                        <li><a href="#">策略模拟</a></li>
+                        <li><a href="#">体育竞技</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 3DM汉化组. All Rights Reserved. 本站内容仅供学习交流，请于下载后24小时内删除。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>

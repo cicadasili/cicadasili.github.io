@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="渐渐淡薄的记忆 - 深度探索记忆的本质与遗忘的艺术。提供关于阿尔茨海默症早期预防、大脑记忆训练方法、怀旧疗法及记忆保存技巧的实用指南与情感共鸣文章。">
+    <meta name="keywords" content="渐渐淡薄的记忆, 记忆力减退, 阿尔茨海默症, 脑力训练, 怀旧疗法, 记忆保存, 记忆心理学">
+    <title>渐渐淡薄的记忆 - 记忆保存与大脑健康指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a5568;
+            --accent-color: #805ad5;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --text-main: #2d3748;
+            --text-light: #718096;
+            --border-color: #e2e8f0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        nav a.active {
+            color: var(--accent-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: white;
+            color: var(--accent-color);
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Feature Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.8rem;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Content Section */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 240px;
+            background-color: #e2e8f0;
+            object-fit: cover;
+        }
+
+        .article-body {
+            padding: 1.5rem;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Sidebar */
+        aside {
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+        }
+
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .sidebar-list li {
+            margin-bottom: 0.8rem;
+        }
+
+        .sidebar-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .sidebar-list span {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background-color: #f8f9fa;
+        }
+
+        .faq-answer {
+            padding: 0 1.2rem 1.2rem;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid transparent;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d3748;
+            color: #a0aec0;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            margin-left: 1.5rem;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            nav ul {
+                display: none; /* Simplified mobile handling */
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            aside {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">渐渐淡薄<span>的记忆</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#causes">成因分析</a></li>
+                    <li><a href="#prevention">预防与训练</a></li>
+                    <li><a href="#care">照护指南</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                </ul>
+                <div class="menu-toggle">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>面对渐渐淡薄的记忆</h1>
+                <p>探索记忆的本质，了解大脑如何遗忘，以及如何通过科学的方法延缓记忆衰退，守护珍贵的记忆碎片。</p>
+                <a href="#prevention" class="btn">开始记忆训练</a>
+            </div>
+        </section>
+
+        <!-- Feature Grid -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>记忆的三个维度</h2>
+                    <p>了解记忆流失的三个关键阶段与应对策略</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>正常衰老</h3>
+                        <p>随着年龄增长，大脑处理速度变慢，偶尔遗忘人名或近期事件是正常的生理现象，不必过度焦虑。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">⚠️</div>
+                        <h3>认知预警</h3>
+                        <p>如果出现反复迷路、无法完成熟悉任务或语言表达困难，可能是认知功能下降的早期信号。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>神经保护</h3>
+                        <p>通过健康饮食、规律运动和持续学习，可以建立神经可塑性，为大脑构建强大的防御机制。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <section id="prevention" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>延缓记忆衰退的科学方法</h2>
+                    <p>基于神经科学的研究，以下是已被证实有效的记忆维护策略</p>
+                </div>
+                <div class="content-grid">
+                    <!-- Articles Column -->
+                    <div class="articles-column">
+                        <article class="article-card">
+                            <img src="https://picsum.photos/seed/memory1/800/400" alt="记忆训练图片" class="article-image">
+                            <div class="article-body">
+                                <div class="article-meta">认知科学 • 2023年10月15日</div>
+                                <h3 class="article-title"><a href="#">为什么我们的大脑会主动遗忘？</a></h3>
+                                <p class="article-excerpt">遗忘并非单纯的损失，而是大脑为了提高效率而进行的“信息整理”。本文深入解析海马体在记忆巩固过程中的关键作用。</p>
+                                <a href="#" class="read-more">阅读全文 &rarr;</a>
+                            </div>
+                        </article>
+                        <article class="article-card">
+                            <img src="https://picsum.photos/seed/memory2/800/400" alt="健康饮食图片" class="article-image">
+                            <div class="article-body">
+                                <div class="article-meta">营养健康 • 2023年10月12日</div>
+                                <h3 class="article-title"><a href="#">地中海饮食与记忆力的关联性研究</a></h3>
+                                <p class="article-excerpt">富含Omega-3脂肪酸和抗氧化剂的食物如何保护神经元？专家建议的“护脑食谱”清单。</p>
+                                <a href="#" class="read-more">阅读全文 &rarr;</a>
+                            </div>
+                        </article>
+                        <article class="article-card">
+                            <img src="https://picsum.photos/seed/memory3/800/400" alt="社交活动图片" class="article-image">
+                            <div class="article-body">
+                                <div class="article-meta">心理健康 • 2023年10月08日</div>
+                                <h3 class="article-title"><a href="#">孤独感对记忆功能的潜在影响</a></h3>
+                                <p class="article-excerpt">研究表明，缺乏社交互动会加速大脑萎缩。建立良好的社交网络是预防认知障碍的重要一环。</p>
+                                <a href="#" class="read-more">阅读全文 &rarr;</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Sidebar Column -->
+                    <aside>
+                        <div class="sidebar-widget">
+                            <h3>快速分类导航</h3>
+                            <ul class="sidebar-list">
+                                <li><a href="#">记忆力减退症状 <span>12篇</span></a></li>
+                                <li><a href="#">阿尔茨海默症早期筛查 <span>8篇</span></a></li>
+                                <li><a href="#">老年痴呆症护理指南 <span>15篇</span></a></li>
+                                <li><a href="#">健忘症的心理调节 <span>6篇</span></a></li>
+                                <li><a href="#">家庭记忆相册制作 <span>5篇</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-widget">
+                            <h3>热门话题</h3>
+                            <ul class="sidebar-list">
+                                <li><a href="#">如何应对健忘？ <span>2.3k</span></a></li>
+                                <li><a href="#">记忆宫殿训练法 <span>1.8k</span></a></li>
+                                <li><a href="#">老年痴呆预防运动 <span>1.5k</span></a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section" style="background-color: #fff;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                    <p>关于记忆流失与保养的常见疑问</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">偶尔忘记钥匙放在哪里算不算记忆力衰退？</div>
+                        <div class="faq-answer">偶尔的健忘，特别是情境性遗忘（忘记钥匙在哪里），通常是由于注意力分散或疲劳引起的，属于正常现象。但如果经常性地忘记常用物品的位置，或者忘记刚刚发生的事情，则需要引起重视。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">吃什么可以改善记忆力？</div>
+                        <div class="faq-answer">深海鱼（如三文鱼）、坚果、蓝莓、西兰花和全谷物等食物富含对大脑有益的营养素。此外，保持充足的水分摄入也对认知功能至关重要。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何判断家人是否患上了阿尔茨海默症？</div>
+                        <div class="faq-answer">早期迹象包括：近期记忆明显受损、判断力下降、处理熟悉事物困难、性格改变、重复提问或迷路。建议及时咨询神经内科医生进行专业评估。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>渐渐淡薄的记忆</h3>
+                <p class="copyright">致力于提供科学、客观的记忆健康资讯与服务。</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">隐私政策</a>
+                <a href="#">联系方式</a>
+                <a href="#">免责声明</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Smooth Scroll for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+          </html>
